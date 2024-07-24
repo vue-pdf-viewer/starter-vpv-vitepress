@@ -24,5 +24,10 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/vue-pdf-viewer' }
     ]
+  },
+  vite: {
+    ssr: {
+      noExternal: ['pdfjs-dist', '@vue-pdf-viewer/viewer']
+    }
   }
 })
