@@ -42,7 +42,7 @@ npm install
     bun install
     ```
 
-_Remark: For `pnpm`, there is a bit more configuration required which can be found (here)[https://docs.vue-pdf-viewer.dev/troubleshooting.html#_3-resolving-peer-dependency-version-mismatch-with-pnpm]._
+_Remark: For `pnpm`, there is a bit more configuration required which can be found [here](https://docs.vue-pdf-viewer.dev/troubleshooting.html#_3-resolving-peer-dependency-version-mismatch-with-pnpm)._
 
 ### Running the Example Project
 
@@ -114,4 +114,4 @@ If you want to find out more configurations. Please check the [documentation](ht
 
 ---
 
-Thank you for using Vue PDF Viewer! We hope this toolkit helps you build amazing Nuxt applications. If you have any questions or need further assistance on this example, please feel free to open an issue. Happy coding!
+Thank you for using Vue PDF Viewer! We hope this toolkit helps you build amazing VitePress applications. If you have any questions or need further assistance on this example, please feel free to open an issue. Happy coding!
