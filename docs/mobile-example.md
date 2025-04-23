@@ -1,5 +1,5 @@
 ---
-outline: 'deep'
+outline: "deep"
 ---
 
 # VPV for mobile screen size example
@@ -7,6 +7,8 @@ outline: 'deep'
 <script setup lang="ts">
   import { ref } from 'vue'
   import { useData, defineClientComponent } from 'vitepress'
+  import PdfViewerLicense from './components/PdfViewerLicense.vue'
+  
   const clientCompRef = ref()
   const VPdfViewer = defineClientComponent(
     () => {
@@ -15,14 +17,15 @@ outline: 'deep'
   )
   const { isDark } = useData()
 </script>
-
-<div class="pdf-viewer-wrapper">
-  <p v-if="!clientCompRef">VPV is loading</p>
-  <VPdfViewer
-    src="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
-    v-model:dark-mode="isDark" 
-  />
-</div>
+<PdfViewerLicense>
+  <div class="pdf-viewer-wrapper">
+    <p v-if="!clientCompRef">VPV is loading</p>
+    <VPdfViewer
+      src="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
+      v-model:dark-mode="isDark" 
+    />
+  </div>
+</PdfViewerLicense>
 
 <style scoped>
   .pdf-viewer-wrapper {

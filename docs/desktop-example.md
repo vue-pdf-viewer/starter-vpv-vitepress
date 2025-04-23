@@ -8,7 +8,7 @@ aside: false
 <script setup lang="ts">
   import { useData, defineClientComponent } from 'vitepress'
   import { ref, watch, onBeforeMount } from 'vue'
-  import { useLicense } from '@vue-pdf-viewer/viewer'
+  import PdfViewerLicense from './components/PdfViewerLicense.vue'
 
   const vpvRef = ref<InstanceType<typeof VPdfViewer> | null>(null)
   // Refer to https://vitepress.dev/guide/ssr-compat#defineclientcomponent
@@ -25,24 +25,22 @@ aside: false
   )
 
   const { isDark } = useData()
-
-  onBeforeMount(() => {
-    useLicense({ licenseKey: 'your-license-key' })
-  })
   
   watch(vpvRef, (newVal) => {
 		console.log("These are VPV instance properties", Object.keys(newVal));
 	}, { deep: true });
 </script>
 
-<div class="pdf-viewer-wrapper">
-  <VPdfViewer
-    ref="vpvRef"
-    src="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
-    :dark-mode="isDark"
-    @update:dark-mode="isDark = $event"
-  />
-</div>
+<PdfViewerLicense>
+  <div class="pdf-viewer-wrapper">
+    <VPdfViewer
+      ref="vpvRef"
+      src="https://raw.githubusercontent.com/mozilla/pdf.js/ba2edeae/web/compressed.tracemonkey-pldi-09.pdf"
+      :dark-mode="isDark"
+      @update:dark-mode="isDark = $event"
+    />
+  </div>
+</PdfViewerLicense>
 
 <style scoped>
   .pdf-viewer-wrapper {
