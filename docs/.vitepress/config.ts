@@ -27,7 +27,10 @@ export default defineConfig({
   },
   vite: {
     ssr: {
-      noExternal: ['pdfjs-dist', '@vue-pdf-viewer/viewer']
-    }
+      noExternal: ['pdfjs-dist']
+    },
+    optimizeDeps: {
+			exclude: ["@vue-pdf-viewer/viewer", "pdfjs-dist"],
+		},
   }
 })
